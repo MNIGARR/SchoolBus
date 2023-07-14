@@ -1,0 +1,62 @@
+﻿<Window x:Class="SchoolBus.Presentation.Views.MainVindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolBus.Presentation.Views"
+        xmlns:viewModel ="clr-namespace:SchoolBus.Presentation.ViewModels"
+        d:DataContext="{d:DesignInstance Type=viewModel:MainViewModel}"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="10"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignSnackbarRipple}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainVindow" Height="590" Width="850">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            
+            <Image Source="https://st.depositphotos.com/1557418/3019/v/950/depositphotos_30194409-stock-illustration-school-bus-vector-illustration.jpg" Width="440" Height="180"/>
+
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+
+                <Button Content="Car" Margin="15, 11" Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                    ToolTip="MaterialDesignRaisedButton with Round Corners" Command="{Binding CarViewCommand}" />
+
+                <Button Content="Class" Margin="15, 0" Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                    ToolTip="MaterialDesignRaisedButton with Round Corners" Command="{Binding ClassViewCommand}" />
+                
+                <Button Content="Driver" Margin="15, 11" Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                    ToolTip="MaterialDesignRaisedButton with Round Corners" Command="{Binding DriverViewCommand}" />
+                
+                <Button Content="Parent" Margin="15, 0" Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                    ToolTip="MaterialDesignRaisedButton with Round Corners" Command="{Binding ParentViewCommand}" />
+                
+                <Button Content="Ride" Margin="15, 11" Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                    ToolTip="MaterialDesignRaisedButton with Round Corners" Command="{Binding RideViewCommand}" />
+                
+                <Button Content="Student" Margin="15, 0" Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                    ToolTip="MaterialDesignRaisedButton with Round Corners" Command="{Binding StudentViewCommand}" />
+
+                <Button Content="Create Ride" Margin="15, 11" Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                    ToolTip="MaterialDesignRaisedButton with Round Corners" Command="{Binding CreateRideViewCommand}" />
+            </StackPanel>
+
+            <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}"></ContentControl>
+
+        </Grid>
+
+    </Grid>
+</Window>
